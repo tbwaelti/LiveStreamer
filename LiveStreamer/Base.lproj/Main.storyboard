@@ -122,12 +122,12 @@
                                 <items>
                                     <barButtonItem systemItem="play" id="VFa-IK-kLO">
                                         <connections>
-                                            <action selector="play:" destination="Ah7-4n-0Wa" id="hI8-wU-4Ov"/>
+                                            <action selector="play_pushed:" destination="Ah7-4n-0Wa" id="fki-Tv-cYw"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="pause" id="u8R-cG-KRx">
                                         <connections>
-                                            <action selector="pause:" destination="Ah7-4n-0Wa" id="uE1-7E-kvw"/>
+                                            <action selector="pause_pushed:" destination="Ah7-4n-0Wa" id="cSQ-gE-rRT"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="4ig-9M-BrO">
@@ -155,9 +155,6 @@ abel</string>
                                             <rect key="frame" x="255" y="7" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </switch>
-                                        <connections>
-                                            <action selector="crosshairSwitchPressed:" destination="Ah7-4n-0Wa" id="ELs-Gr-xlH"/>
-                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -194,7 +191,6 @@ abel</string>
                     </view>
                     <navigationItem key="navigationItem" title="LiveStream" id="cra-N8-TIN"/>
                     <connections>
-                        <outlet property="crosshairSwitchPressed" destination="bl8-3N-ULK" id="vbN-uS-bbY"/>
                         <outlet property="message_label" destination="Id9-Kk-Csy" id="xde-bA-fg9"/>
                         <outlet property="pause_button" destination="u8R-cG-KRx" id="EBq-Od-4F3"/>
                         <outlet property="play_button" destination="VFa-IK-kLO" id="aup-8R-APu"/>

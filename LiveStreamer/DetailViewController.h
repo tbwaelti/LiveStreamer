@@ -21,10 +21,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *toolbarLabel;
 @property (weak, nonatomic) NSString *uri;
-
-- (IBAction)play:(UIBarButtonItem *)sender;
-- (IBAction)pause:(UIBarButtonItem *)sender;
-- (IBAction)crosshairSwitchPressed:(UIBarButtonItem *)sender;
+- (IBAction)play_pushed:(UIBarButtonItem *)sender;
+- (IBAction)pause_pushed:(UIBarButtonItem *)sender;
 
 /* From GStreamerBackendDelegate */
 -(void) gstreamerInitialized;

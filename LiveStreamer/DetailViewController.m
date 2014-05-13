@@ -51,17 +51,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.play_button.enabled = FALSE;
-    self.pause_button.enabled = FALSE;
-    
-    /* As soon as the GStreamer backend knows the real values, these ones will be replaced */
-    media_width = 320;
-    media_height = 240;
+    [self configureView];
     
     gst_backend = [[GStreamerBackend alloc] init:self videoView:self.video_view];
     
-    [self configureView];
-    
+    NSLog([gst_backend getGStreamerVersion]);
+    self.play_button.enabled = FALSE;
+    self.pause_button.enabled = FALSE;
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,19 +66,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)play:(UIBarButtonItem *)sender {
+- (IBAction)play_pushed:(UIBarButtonItem *)sender {
+    NSLog(@"play pushed");
     [gst_backend play];
-    is_playing_desired = YES;
-    [UIApplication sharedApplication].idleTimerDisabled = YES;
 }
 
-- (IBAction)pause:(UIBarButtonItem *)sender {
+- (IBAction)pause_pushed:(UIBarButtonItem *)sender {
+    NSLog(@"Pause pushed");
     [gst_backend pause];
-    is_playing_desired = NO;
-    [UIApplication sharedApplication].idleTimerDisabled = NO;
-}
-
-- (IBAction)crosshairSwitchPressed:(UIBarButtonItem *)sender {
 }
 
 -(void) gstreamerInitialized
@@ -91,8 +82,6 @@
         self.play_button.enabled = TRUE;
         self.pause_button.enabled = TRUE;
         self.message_label.text = @"Ready";
-        is_local_media = [uri hasPrefix:@"file://"];
-        is_playing_desired = NO;
     });
 }
 
