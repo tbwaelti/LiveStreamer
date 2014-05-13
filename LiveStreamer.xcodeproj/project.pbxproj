@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A8502F8192267A400D2A4E4 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8502F7192267A400D2A4E4 /* GLKit.framework */; };
+		2A8502FB19226C9A00D2A4E4 /* GStreamerBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A8502FA19226C9A00D2A4E4 /* GStreamerBackend.m */; };
 		2AAB36A11922105800C762A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAB36A01922105800C762A7 /* Foundation.framework */; };
 		2AAB36A31922105800C762A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAB36A21922105800C762A7 /* CoreGraphics.framework */; };
 		2AAB36A51922105800C762A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAB36A41922105800C762A7 /* UIKit.framework */; };
@@ -29,6 +31,9 @@
 		2AAB36D41922105800C762A7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAB36A61922105800C762A7 /* CoreData.framework */; };
 		2AAB36DC1922105800C762A7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AAB36DA1922105800C762A7 /* InfoPlist.strings */; };
 		2AAB36DE1922105800C762A7 /* LiveStreamerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB36DD1922105800C762A7 /* LiveStreamerTests.m */; };
+		2AAB36E8192210BC00C762A7 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAB36E7192210BC00C762A7 /* libiconv.dylib */; };
+		2AAB36ED1922117D00C762A7 /* EaglUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB36EA1922117D00C762A7 /* EaglUIView.m */; };
+		2AAB36F1192211EA00C762A7 /* ELEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB36F0192211EA00C762A7 /* ELEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A8502F7192267A400D2A4E4 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		2A8502F919226C9A00D2A4E4 /* GStreamerBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GStreamerBackend.h; path = "../../../Downloads/gstreamer_ios_tutorial-master/deinonychus/GStreamerBackend.h"; sourceTree = "<group>"; };
+		2A8502FA19226C9A00D2A4E4 /* GStreamerBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GStreamerBackend.m; path = "../../../Downloads/gstreamer_ios_tutorial-master/deinonychus/GStreamerBackend.m"; sourceTree = "<group>"; };
 		2AAB369D1922105800C762A7 /* LiveStreamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveStreamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AAB36A01922105800C762A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2AAB36A21922105800C762A7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -70,6 +78,11 @@
 		2AAB36D91922105800C762A7 /* LiveStreamerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LiveStreamerTests-Info.plist"; sourceTree = "<group>"; };
 		2AAB36DB1922105800C762A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2AAB36DD1922105800C762A7 /* LiveStreamerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveStreamerTests.m; sourceTree = "<group>"; };
+		2AAB36E7192210BC00C762A7 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		2AAB36E91922117D00C762A7 /* EaglUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EaglUIView.h; path = "../../../Downloads/gstreamer_ios_tutorial-master/deinonychus/EaglUIView.h"; sourceTree = "<group>"; };
+		2AAB36EA1922117D00C762A7 /* EaglUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EaglUIView.m; path = "../../../Downloads/gstreamer_ios_tutorial-master/deinonychus/EaglUIView.m"; sourceTree = "<group>"; };
+		2AAB36EF192211EA00C762A7 /* ELEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ELEditViewController.h; path = "../../Streamer/Tutorial 5/ELEditViewController.h"; sourceTree = "<group>"; };
+		2AAB36F0192211EA00C762A7 /* ELEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ELEditViewController.m; path = "../../Streamer/Tutorial 5/ELEditViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +90,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AAB36E8192210BC00C762A7 /* libiconv.dylib in Frameworks */,
+				2A8502F8192267A400D2A4E4 /* GLKit.framework in Frameworks */,
 				2AAB36A31922105800C762A7 /* CoreGraphics.framework in Frameworks */,
 				2AAB36A71922105800C762A7 /* CoreData.framework in Frameworks */,
-				2AAB36A51922105800C762A7 /* UIKit.framework in Frameworks */,
 				2AAB36A91922105800C762A7 /* GStreamer.framework in Frameworks */,
+				2AAB36A51922105800C762A7 /* UIKit.framework in Frameworks */,
 				2AAB36A11922105800C762A7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +136,8 @@
 		2AAB369F1922105800C762A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A8502F7192267A400D2A4E4 /* GLKit.framework */,
+				2AAB36E7192210BC00C762A7 /* libiconv.dylib */,
 				2AAB36A01922105800C762A7 /* Foundation.framework */,
 				2AAB36A21922105800C762A7 /* CoreGraphics.framework */,
 				2AAB36A41922105800C762A7 /* UIKit.framework */,
@@ -139,10 +156,16 @@
 				2AAB36B61922105800C762A7 /* Main.storyboard */,
 				2AAB36BC1922105800C762A7 /* MasterViewController.h */,
 				2AAB36BD1922105800C762A7 /* MasterViewController.m */,
+				2AAB36EF192211EA00C762A7 /* ELEditViewController.h */,
+				2AAB36F0192211EA00C762A7 /* ELEditViewController.m */,
 				2AAB36BF1922105800C762A7 /* DetailViewController.h */,
 				2AAB36C01922105800C762A7 /* DetailViewController.m */,
 				2AAB36C91922105800C762A7 /* Images.xcassets */,
 				2AAB36B91922105800C762A7 /* LiveStreamer.xcdatamodeld */,
+				2AAB36E91922117D00C762A7 /* EaglUIView.h */,
+				2AAB36EA1922117D00C762A7 /* EaglUIView.m */,
+				2A8502F919226C9A00D2A4E4 /* GStreamerBackend.h */,
+				2A8502FA19226C9A00D2A4E4 /* GStreamerBackend.m */,
 				2AAB36AB1922105800C762A7 /* Supporting Files */,
 			);
 			path = LiveStreamer;
@@ -282,10 +305,13 @@
 			files = (
 				2AAB36C11922105800C762A7 /* DetailViewController.m in Sources */,
 				2AAB36BE1922105800C762A7 /* MasterViewController.m in Sources */,
+				2AAB36ED1922117D00C762A7 /* EaglUIView.m in Sources */,
 				2AAB36C71922105800C762A7 /* gst_ios_init.m in Sources */,
 				2AAB36B51922105800C762A7 /* AppDelegate.m in Sources */,
 				2AAB36BB1922105800C762A7 /* LiveStreamer.xcdatamodeld in Sources */,
 				2AAB36B11922105800C762A7 /* main.m in Sources */,
+				2A8502FB19226C9A00D2A4E4 /* GStreamerBackend.m in Sources */,
+				2AAB36F1192211EA00C762A7 /* ELEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +580,7 @@
 				2AAB36E31922105800C762A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AAB36E41922105800C762A7 /* Build configuration list for PBXNativeTarget "LiveStreamerTests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +589,7 @@
 				2AAB36E61922105800C762A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
