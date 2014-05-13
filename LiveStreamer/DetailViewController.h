@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "EaglUIView.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController {
+    UIImageView *myImage;
+    CGRect myImageRect;
+}
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *play_button;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *pause_button;
@@ -23,6 +26,7 @@
 @property (weak, nonatomic) NSString *uri;
 - (IBAction)play_pushed:(UIBarButtonItem *)sender;
 - (IBAction)pause_pushed:(UIBarButtonItem *)sender;
+- (IBAction)crosshairChanged:(UISwitch *)sender;
 
 /* From GStreamerBackendDelegate */
 -(void) gstreamerInitialized;

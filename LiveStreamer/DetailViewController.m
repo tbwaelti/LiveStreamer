@@ -58,6 +58,10 @@
     NSLog([gst_backend getGStreamerVersion]);
     self.play_button.enabled = FALSE;
     self.pause_button.enabled = FALSE;
+    
+    myImageRect = CGRectMake(0.0f, 150.0f, 320.0f, 200.0f);
+    myImage = [[UIImageView alloc] initWithFrame:myImageRect];
+    [myImage setImage:[UIImage imageNamed:@"crosshair"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,6 +79,35 @@
     NSLog(@"Pause pushed");
     [gst_backend pause];
 }
+
+- (IBAction)crosshairChanged:(UISwitch *)sender {
+    if (sender.on) {
+        [self.view addSubview:myImage];
+    } else if (!sender.on) {
+        if (myImage != nil) {
+            [self.view sendSubviewToBack:myImage];
+        }
+    }
+}
+
+- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    if ((fromInterfaceOrientation == UIInterfaceOrientationPortrait) || (fromInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) {
+        
+        [myImage removeFromSuperview];
+        myImageRect = CGRectMake(125.0f, 50.0f, 320.0f, 200.0f);
+        myImage = [[UIImageView alloc] initWithFrame:myImageRect];
+        [myImage setImage:[UIImage imageNamed:@"crosshair"]];
+        
+    }
+    if ((fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight) || (fromInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) {
+        
+        [myImage removeFromSuperview];
+        myImageRect = CGRectMake(0.0f, 150.0f, 320.0f, 200.0f);
+        myImage = [[UIImageView alloc] initWithFrame:myImageRect];
+        [myImage setImage:[UIImage imageNamed:@"crosshair"]];
+    }
+}
+
 
 -(void) gstreamerInitialized
 {
