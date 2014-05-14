@@ -59,9 +59,15 @@
     self.play_button.enabled = FALSE;
     self.pause_button.enabled = FALSE;
     
-    myImageRect = CGRectMake(0.0f, 150.0f, 320.0f, 200.0f);
+    myImageRect = CGRectMake(0.0f, 150.0f, 325.0f, 225.0f);
     myImage = [[UIImageView alloc] initWithFrame:myImageRect];
     [myImage setImage:[UIImage imageNamed:@"crosshair"]];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    myImage = nil;
+    [gst_backend deinit];
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,31 +96,55 @@
     }
 }
 
+- (IBAction)editPressed:(UIButton *)sender {
+    [gst_backend pause];
+    myImage = nil;
+    [gst_backend deinit];
+    self.editViewController = (ELEditViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"editViewStb"];
+    [self.editViewController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [self.editViewController setDetailItem:self.detailItem];
+    [self presentViewController:self.editViewController animated:YES completion:NULL];
+    gst_backend = [[GStreamerBackend alloc] init:self videoView:self.video_view];
+    self.toolbarLabel.text = [NSString stringWithFormat:@"Now streaming: \n%@", [self.detailItem valueForKey:@"name"]];
+    self.uri = [self.detailItem valueForKey:@"feed"];
+    [gst_backend setUri:self.uri];
+    [gst_backend play];
+}
+
 - (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     if ((fromInterfaceOrientation == UIInterfaceOrientationPortrait) || (fromInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) {
         
-        [myImage removeFromSuperview];
+        [self.view sendSubviewToBack:myImage];
         myImageRect = CGRectMake(125.0f, 50.0f, 320.0f, 200.0f);
         myImage = [[UIImageView alloc] initWithFrame:myImageRect];
         [myImage setImage:[UIImage imageNamed:@"crosshair"]];
-        
+        [self crosshairChanged:self.crosshairSwitch];
     }
     if ((fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight) || (fromInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) {
         
-        [myImage removeFromSuperview];
-        myImageRect = CGRectMake(0.0f, 150.0f, 320.0f, 200.0f);
+        [self.view sendSubviewToBack:myImage];
+        myImageRect = CGRectMake(0.0f, 150.0f, 325.0f, 225.0f);
         myImage = [[UIImageView alloc] initWithFrame:myImageRect];
         [myImage setImage:[UIImage imageNamed:@"crosshair"]];
+        [self crosshairChanged:self.crosshairSwitch];
+    }
+    if ((fromInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (fromInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) {
+        
+        [self.view sendSubviewToBack:myImage];
+        myImageRect = CGRectMake(0.0f, 150.0f, 325.0f, 225.0f);
+        myImage = [[UIImageView alloc] initWithFrame:myImageRect];
+        [myImage setImage:[UIImage imageNamed:@"crosshair"]];
+        [self crosshairChanged:self.crosshairSwitch];
     }
 }
-
 
 -(void) gstreamerInitialized
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         self.play_button.enabled = TRUE;
         self.pause_button.enabled = TRUE;
-        self.message_label.text = @"Ready";
+        self.message_label.text = @"Ready to stream";
+        [gst_backend setUri:self.uri];
     });
 }
 

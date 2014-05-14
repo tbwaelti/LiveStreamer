@@ -163,34 +163,37 @@ abel</string>
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jL-37-iIh" userLabel="VideoContainer">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="505"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="523"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mO8-gg-PnK" userLabel="Video" customClass="EaglUIView">
-                                        <rect key="frame" x="0.0" y="133" width="320" height="240"/>
+                                        <rect key="frame" x="0.0" y="142" width="320" height="240"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="EWS-cG-73V"/>
                                             <constraint firstAttribute="height" constant="240" id="vhB-Wt-afH"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id9-Kk-Csy">
+                                        <rect key="frame" x="0.0" y="502" width="320" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Id9-Kk-Csy" secondAttribute="trailing" id="5Gt-cA-dtZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Id9-Kk-Csy" secondAttribute="bottom" id="TPq-Vf-Oya"/>
                                     <constraint firstAttribute="centerX" secondItem="mO8-gg-PnK" secondAttribute="centerX" id="ebO-QE-g1Y"/>
+                                    <constraint firstItem="Id9-Kk-Csy" firstAttribute="leading" secondItem="5jL-37-iIh" secondAttribute="leading" id="tHJ-Tq-i29"/>
                                     <constraint firstAttribute="centerY" secondItem="mO8-gg-PnK" secondAttribute="centerY" id="wrA-eQ-RAi"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id9-Kk-Csy">
-                                <rect key="frame" x="0.0" y="503" width="320" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="5jL-37-iIh" secondAttribute="bottom" constant="63" id="H9C-OV-J6e"/>
+                            <constraint firstAttribute="bottom" secondItem="5jL-37-iIh" secondAttribute="bottom" constant="45" id="H9C-OV-J6e"/>
                             <constraint firstItem="5jL-37-iIh" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" id="HGK-ct-cyr"/>
                             <constraint firstAttribute="trailing" secondItem="IuA-6g-aLe" secondAttribute="trailing" id="Svh-9Z-Mfo"/>
                             <constraint firstItem="IuA-6g-aLe" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="V6a-9P-umL"/>
@@ -199,8 +202,26 @@ abel</string>
                             <constraint firstAttribute="trailing" secondItem="5jL-37-iIh" secondAttribute="trailing" id="zaG-oJ-G2f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="LiveStream" id="cra-N8-TIN"/>
+                    <navigationItem key="navigationItem" title="LiveStream" id="cra-N8-TIN">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="8tT-Mj-OoV">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AIs-kd-jm5">
+                                <rect key="frame" x="225" y="5" width="79" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="edit Stream">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="editPressed:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="PqK-Z9-5ab"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="editPressed:" destination="Ah7-4n-0Wa" id="MeT-gL-u48"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="crosshairSwitch" destination="CYR-Uy-T7p" id="4DN-Hc-J5y"/>
                         <outlet property="message_label" destination="Id9-Kk-Csy" id="xde-bA-fg9"/>
                         <outlet property="pause_button" destination="u8R-cG-KRx" id="EBq-Od-4F3"/>
                         <outlet property="play_button" destination="VFa-IK-kLO" id="aup-8R-APu"/>
@@ -232,8 +253,8 @@ abel</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXi-aL-jkF">
-                                <rect key="frame" x="115" y="398" width="91" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXi-aL-jkF">
+                                <rect key="frame" x="149" y="438" width="91" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="save and exit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -274,6 +295,10 @@ abel</string>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="and-AX-J8Y" firstAttribute="top" secondItem="LXi-aL-jkF" secondAttribute="bottom" constant="100" id="Uxy-i7-NV7"/>
+                            <constraint firstAttribute="trailing" secondItem="LXi-aL-jkF" secondAttribute="trailing" constant="80" id="wg6-8a-tkE"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="name" destination="CcH-qb-wgW" id="L2D-NP-6Wk"/>
